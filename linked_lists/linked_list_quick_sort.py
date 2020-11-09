@@ -55,6 +55,7 @@ class LinkedList:
 
 
     def quick_sort(self, start, end):
+        # checking where we reached end or there is only one emelent for the given start and end
         if not start or start==end:
             return start
         new_start = None
@@ -75,14 +76,12 @@ class LinkedList:
 
         return new_start
 
-    def final_sort(self):
-        self.head = self.quick_sort(self.head, self.get_end(self.head))
-
 
 if __name__ == '__main__':
     ll = LinkedList()
     for i in [12, 69654, 12, 32, 2, 16, 1, 6]:
         ll.insert_a_node_at_head(i)
     ll.traverse()
-    ll.final_sort()
+    ll.head = ll.quick_sort(ll.head, ll.get_end(ll.head))
+
     ll.traverse()

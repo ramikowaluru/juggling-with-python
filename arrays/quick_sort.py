@@ -1,6 +1,6 @@
 class QuickSort:
-    def __init__(self):
-        self.list_of_elements = [12, 69654, 12, 32, 2, 16, 1, 6]
+    def __init__(self, list_of_values):
+        self.list_of_elements = list_of_values
 
     def partition(self, low, high):
         pivot_position_temp = low - 1
@@ -26,6 +26,6 @@ class QuickSort:
 
 
 if __name__ == '__main__':
-    q = QuickSort()
+    q = QuickSort([12, 69654, 12, 32, 2, 16, 1, 6])
     q.quick_sort(0, len(q.list_of_elements) - 1)
     print(q.list_of_elements)
